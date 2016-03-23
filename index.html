@@ -11,8 +11,8 @@
 		<h1>{{product.name}}</h1>
 		<h2>{{product.price | currency}}</h2>
 		<img style="width: 100px; height: 100px;" ng-src="{{product.imgs}}">		
-		<button ng-click="store.add(product.price)" >Add to Cart</button>
-		<button ng-click="store.remove(product.price)" >Remove from Cart</button>
+		<button ng-click="store.add(product.price,product.num)" ng-show="product.canPurchase">Add to Cart</button>
+		<button ng-click="store.remove(product.price,product.num)" ng-show="!product.canPurchase">Remove from Cart</button>
 	</div>
 
 	<div>
