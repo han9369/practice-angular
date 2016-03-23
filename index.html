@@ -15,8 +15,11 @@
 		<button ng-click="store.remove(product.price,product.num)" ng-show="!product.canPurchase">Remove from Cart</button>
 	</div>
 
-	<h3>Totals</h3>
-	<h4>{{store.totals | currency}}</h4>
+	<div>
+		<h3>Totals</h3>
+		<p ng-repeat="product in store.products" ng-show="!product.canPurchase">{{product.name}} : {{product.price | currency}}</p>
+		<h4>{{store.totals | currency}}</h4>
+	</div>
 
 	<script type="text/javascript" src="js/angular.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
