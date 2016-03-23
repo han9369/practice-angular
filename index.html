@@ -17,6 +17,7 @@
 
 	<div>
 		<h3>Totals</h3>
+		<p ng-repeat="product in store.products" ng-show="!product.canPurchase">{{product.name}} : {{product.price | currency}}</p>
 		<h4>{{store.totals | currency}}</h4>
 	</div>
 
