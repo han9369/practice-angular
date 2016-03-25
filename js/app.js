@@ -22,6 +22,22 @@
 				gems[index].canPurchase = true;
 			}
 		};
+
+	});
+
+	app.controller("PanelController",function(){
+		this.tab = 1;
+		this.pro = gems;
+
+		this.selectTab = function(setTab){
+			this.tab = setTab;
+		};
+		this.isSelected = function(checkTab){
+			return this.tab === checkTab;
+		};
+
+
+
 	});
 
 	var gems = [
@@ -30,7 +46,21 @@
 			name: 'product1',
 			price: 20.95,
 			imgs: 'img/1.png',
-			canPurchase: true
+			canPurchase: true,
+			reviews:[
+				{
+					stars:5,
+					body:"I love this product!",
+					author:"joe@thomas.com"
+
+				},
+				{
+					stars:1,
+					body:"This product sucks",
+					author:"tim@hater.com"
+
+				},
+			]
 		},
 		{
 			num:1,
